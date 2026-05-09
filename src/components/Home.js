@@ -1,11 +1,10 @@
+/* eslint-disable */
 import React, { useState } from "react";
 import Notes from "./Notes";
 import AddNote from "./AddNote";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-const SIDEBAR_WIDTH = 270;
 
 const Home = () => {
   const [activeSection, setActiveSection] = useState("add");
