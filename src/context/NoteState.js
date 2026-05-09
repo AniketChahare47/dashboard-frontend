@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import NoteContext from "./NoteContext";
 
 function NoteState(props) {
-  const host = "http://localhost:5000/api/notes";
+  const host = "https://dashboard-backend-trcc.onrender.com/api/notes";
   const [notes, setNotes] = useState([]);
 
   // ================= FETCH NOTES =================
