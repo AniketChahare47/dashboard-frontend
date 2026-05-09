@@ -1,0 +1,106 @@
+/* ================= FORCE RESET ================= */
+.notes-container {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)) !important;
+  gap: 18px !important;
+  padding: 12px !important;
+  background: transparent !important;
+}
+
+/* ================= NOTE CARD ================= */
+.notes-container .note-card {
+  background: #fef3c7 !important; /* yellow */
+  border-radius: 14px !important;
+  padding: 16px !important;
+  min-height: 150px !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+
+  border: 1px solid #e5e7eb !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08) !important;
+
+  transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+/* subtle hover */
+.notes-container .note-card:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15) !important;
+}
+
+/* ================= TEXT ================= */
+.notes-container .note-card h2 {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  color: #111827 !important;
+  margin-bottom: 6px !important;
+}
+
+.notes-container .description {
+  font-size: 14px !important;
+  color: #1f2937 !important;
+  line-height: 1.5 !important;
+  margin-bottom: 8px !important;
+}
+
+.notes-container .author {
+  font-size: 12px !important;
+  color: #374151 !important;
+  margin-bottom: 8px !important;
+}
+
+/* ================= ACTIONS ================= */
+.notes-container .actions {
+  display: flex !important;
+  gap: 8px !important;
+  opacity: 1 !important; /* always visible like Google Keep */
+}
+
+/* ================= BUTTONS ================= */
+.notes-container .edit-btn,
+.notes-container .delete-btn {
+  flex: 1 !important;
+  border: none !important;
+  padding: 6px 0 !important;
+  border-radius: 8px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  color: #111827 !important;
+  background: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+}
+
+.notes-container .edit-btn:hover {
+  background: #e0e7ff !important;
+}
+
+.notes-container .delete-btn:hover {
+  background: #fee2e2 !important;
+}
+
+/* ================= GOOGLE KEEP COLORS ================= */
+/* automatic variation without JSX change */
+.notes-container .note-card:nth-child(6n+1) { background: #fef3c7 !important; } /* yellow */
+.notes-container .note-card:nth-child(6n+2) { background: #dbf4ff !important; } /* blue */
+.notes-container .note-card:nth-child(6n+3) { background: #dcfce7 !important; } /* green */
+.notes-container .note-card:nth-child(6n+4) { background: #ede9fe !important; } /* purple */
+.notes-container .note-card:nth-child(6n+5) { background: #ffedd5 !important; } /* orange */
+.notes-container .note-card:nth-child(6n+6) { background: #fce7f3 !important; } /* pink */
+
+/* ================= EMPTY ================= */
+.no-notes {
+  grid-column: 1 / -1 !important;
+  text-align: center !important;
+  color: #374151 !important;
+  font-size: 15px !important;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .notes-container {
+    grid-template-columns: 1fr !important;
+  }
+}

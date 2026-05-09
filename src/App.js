@@ -1,24 +1,44 @@
-import logo from './logo.svg';
 import './App.css';
+import Home from './components/Home';
+import About from './components/About';
+import Nav from './components/Nav';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import NoteState from './context/NoteState';
+import Login from './components/Login';
+import Signup from './components/Signup';
+
+// 🔹 Navbar control component
+function Layout() {
+  const location = useLocation();
+
+  const hideNavbar =
+    location.pathname === '/' ||
+    location.pathname === '/login' ||
+    location.pathname === '/signup';
+
+  return (
+    <>
+      {!hideNavbar && <Nav />}
+
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </>
+  );
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      {/* ✅ Router ke ANDAR NoteState */}
+      <NoteState>
+        <Layout />
+      </NoteState>
+    </Router>
   );
 }
 
